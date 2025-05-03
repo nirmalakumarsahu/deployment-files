@@ -1,0 +1,15 @@
+FROM node:18-alpine
+
+LABEL maintainer="yourname@example.com"
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "index.js"]
